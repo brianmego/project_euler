@@ -2,3 +2,4 @@
 *.out
 .env
 *.s[wo]p
+rust/target/
