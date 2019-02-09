@@ -3,3 +3,4 @@ https://projecteuler.net in a few different languages. Good way to learn some sy
 - Python
 - Rust
 - C
+- Erlang

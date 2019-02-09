@@ -3,3 +3,4 @@
 .env
 *.s[wo]p
 rust/target/
+*.beam
