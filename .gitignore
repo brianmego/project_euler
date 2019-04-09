@@ -4,3 +4,4 @@
 *.s[wo]p
 rust/target/
 *.beam
+.idea
