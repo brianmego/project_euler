@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 step_size = 20
 target = step_size
 numbers_to_attempt = range(target, 0, -1)

@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 target_num = 600851475143
 test_val = 2
 while test_val < (target_num ** (.5)):

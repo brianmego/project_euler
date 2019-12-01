@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 primes = [2]
 target_index = 10001
 

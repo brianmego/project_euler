@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 def square_of_sums(target):
     sums = sum(range(1, target + 1))
     return sums ** 2
