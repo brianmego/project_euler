@@ -10,6 +10,6 @@ while True:
             success = False
             break
     if success:
-        print(f'Answer: {target}')
+        print(target)
         break
     target += step_size

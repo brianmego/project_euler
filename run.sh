@@ -17,5 +17,5 @@ function run_language {
 }
 
 run_language Python python/$1.py
-run_language C c/$1
+run_language C c/$1.out
 run_language Rust rust/target/release/$1
