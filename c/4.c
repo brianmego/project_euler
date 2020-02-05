@@ -34,7 +34,7 @@ int main()
 
 bool isPalindrome(char num[]){
     int front = 0, end = strlen(num) - 1;
-    while(front < strlen(num)/2){
+    while(front < (signed)strlen(num)/2){
         if (num[front] != num[end]){ //if front does not equal back --> not palindrome
             return false;
         }
