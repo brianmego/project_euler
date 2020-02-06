@@ -7,23 +7,19 @@
 #include <stdbool.h>
 #include <string.h>
 
-bool isPalindrome(char []);
+bool isPalindrome(int);
+bool hasThreeDigitFactors(int);
 
 int main()
 {
     static int largestNum, index, result = 0;
-    char str[6];
     largestNum = 999; //largest 3-digit number
     index = largestNum * largestNum; //the largest product of two 3-digit numbers
     while (index > 10000) {
-        sprintf(str, "%d", index); //print the current num to a string, str
-        if (isPalindrome(str)){ //check to see if current num is palindrome
-            for(int i = largestNum; i >= 100; i--){ //see if any 3-digit nums are factors of current num
-                if (index % i == 0 && (index / i) < (largestNum + 1) && (index / i) > 99){ //check to see if both factors are 3-digit
-                    result = index;
-                    printf("%d\n", result);
-                    break;
-                }
+        if (isPalindrome(index)){ //check to see if current num is palindrome
+            if (hasThreeDigitFactors(index)){
+                printf("%d\n", index);
+                break;
             }
         }
         if (result > 0) break; //we can end the loop bc we have the ans
@@ -32,7 +28,26 @@ int main()
     return 0;
 }
 
-bool isPalindrome(char num[]){
+bool hasThreeDigitFactors(int target){
+    int min = 500;
+    int max = 999;
+    int quotient;
+    for(int i = max; i >= min; i--) {
+        if (target % i == 0) {
+            quotient = target / i;
+            if (quotient > 100 && quotient <= 999) {
+                    return true;
+            }
+        }
+        
+    }
+    return false;
+
+}
+
+bool isPalindrome(int target){
+    char num[6];
+    sprintf(num, "%d", target); //print the current num to a string, str
     int front = 0, end = strlen(num) - 1;
     while(front < (signed)strlen(num)/2){
         if (num[front] != num[end]){ //if front does not equal back --> not palindrome
