@@ -31,8 +31,9 @@ int main()
 bool hasThreeDigitFactors(int target){
     int min = 500;
     int max = 999;
+    int i;
     int quotient;
-    for(int i = max; i >= min; i--) {
+    for(i = max; i >= min; i--) {
         if (target % i == 0) {
             quotient = target / i;
             if (quotient > 100 && quotient <= 999) {
@@ -47,8 +48,9 @@ bool hasThreeDigitFactors(int target){
 
 bool isPalindrome(int target){
     char num[6];
-    sprintf(num, "%d", target); //print the current num to a string, str
     int front = 0, end = strlen(num) - 1;
+
+    sprintf(num, "%d", target); //print the current num to a string, str
     while(front < (signed)strlen(num)/2){
         if (num[front] != num[end]){ //if front does not equal back --> not palindrome
             return false;
