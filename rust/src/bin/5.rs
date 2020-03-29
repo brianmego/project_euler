@@ -3,7 +3,7 @@ fn main() {
     let mut target = step_size;
 
     loop {
-        let mut success: bool =true;
+        let mut success: bool = true;
         for i in 1..step_size {
             if target % i != 0 {
                 success=false;
