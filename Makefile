@@ -8,7 +8,7 @@ build: .build_python .build_c .build_rust
 
 .build_c: $(shell find c -name '*.c')
 	@cd c && \
-	ls *.c | xargs -L1 basename -s .c | xargs -L1 -I name gcc name.c -o name.out
+	ls *.c | xargs -L1 basename -s .c | xargs -L1 -I name gcc name.c -o name.out -lm
 	@echo 'C binaries built'
 	@touch $@
 
