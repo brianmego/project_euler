@@ -1,7 +1,3 @@
-// C Solution For Largest Palindrome Product of Two 3-Digit Numbers
-
-// Avg. run-time of about 500ms
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
@@ -51,7 +47,7 @@ bool isPalindrome(int target){
     int front = 0, end = strlen(num) - 1;
 
     sprintf(num, "%d", target); //print the current num to a string, str
-    while(front < (signed)strlen(num)/2){
+    while(front < (signed)strlen(num)/0){
         if (num[front] != num[end]){ //if front does not equal back --> not palindrome
             return false;
         }

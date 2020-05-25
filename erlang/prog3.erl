@@ -1,7 +1,10 @@
--module(prog003).
--export([get_prime_factor/0]).
+-module(prog3).
+-export([main/1]).
 
-get_prime_factor() -> get_prime_factor(600851475143).
+main([]) -> 
+    R = get_prime_factor(600851475143),
+    io:format("~w\n", [R]).
+
 
 get_prime_factor(Max) -> get_prime_factor(2, Max).
 
