@@ -8,7 +8,7 @@ bool hasThreeDigitFactors(int);
 
 int main()
 {
-    static int largestNum, index, result = 0;
+    static int largestNum, index;
     largestNum = 999; //largest 3-digit number
     index = largestNum * largestNum; //the largest product of two 3-digit numbers
     while (index > 10000) {
@@ -18,14 +18,13 @@ int main()
                 break;
             }
         }
-        if (result > 0) break; //we can end the loop bc we have the ans
         index--;
     }
     return 0;
 }
 
 bool hasThreeDigitFactors(int target){
-    int min = 500;
+    int min = 100;
     int max = 999;
     int i;
     int quotient;
@@ -47,7 +46,7 @@ bool isPalindrome(int target){
     int front = 0, end = strlen(num) - 1;
 
     sprintf(num, "%d", target); //print the current num to a string, str
-    while(front < (signed)strlen(num)/0){
+    while(front < (signed)strlen(num)/2){
         if (num[front] != num[end]){ //if front does not equal back --> not palindrome
             return false;
         }
