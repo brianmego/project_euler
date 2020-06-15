@@ -1,9 +1,7 @@
 -module(prog2).
--export([main/1]).
+-export([solve/0]).
 
-main([]) -> 
-    R = fib(4000000),
-    io:format("~w\n", [R]).
+solve() -> fib(4000000).
 
 fib(Max) when is_integer(Max) -> fib([1, 1], Max).
 

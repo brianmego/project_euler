@@ -1,4 +1,4 @@
-build: .build_python .build_c .build_rust
+build: .build_python .build_c .build_rust .build_erlang
 
 .build_python:
 	@cd python && \
@@ -18,6 +18,13 @@ build: .build_python .build_c .build_rust
 	@echo 'Rust binaries built'
 	@touch $@
 
+.build_erlang: $(shell find erlang -name '*.erl')
+	@cd erlang && \
+	erlc *.erl
+	@echo 'Erlang beam files build'
+	@touch $@
+
 python: .build_python
 c: .build_c
 rust: .build_rust
+erlang: .build_erlang

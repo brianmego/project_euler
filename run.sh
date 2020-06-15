@@ -18,13 +18,14 @@ function run_language {
     fi
 }
 
+make > /dev/null
 run_language Python python/$1.py
 run_language C c/$1.out
 run_language Rust rust/target/release/$1
 
 printf "Erlang:\t"
 if [[ -f erlang/prog$1.erl ]]; then
-    time escript erlang/prog$1.erl
+    time escript erlang/runner.erl erlang/prog$1
     printf "\n"
 else
     printf "${YELLOW}None${NC}\n"

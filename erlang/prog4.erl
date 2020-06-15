@@ -1,13 +1,12 @@
 -module(prog4).
--export([main/1]).
+-export([solve/0]).
 
-main([]) -> R = check_descending(999 * 999),
-            io:format("~w\n", [R]).
+solve() -> solve(999*999).
 
-check_descending(X) ->
+solve(X) ->
     case is_palindrome(integer_to_list(X)) andalso has_three_digit_factors(X) of
         true -> X;
-        _Else -> check_descending(X - 1)
+        _Else -> solve(X - 1)
     end.
 
 
