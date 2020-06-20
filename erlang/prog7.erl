@@ -1,5 +1,5 @@
 -module(prog7).
--export([solve/0, get_prime_index/1]).
+-export([solve/0]).
 -import(lists,[member/2, last/1, nth/2]).
 
 solve() -> get_prime_index(10001).
