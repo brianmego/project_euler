@@ -1,5 +1,5 @@
 -module(prog8).
--export([solve/0, get_largest_adjacent/4, mult_all/1]).
+-export([solve/0]).
 -import(lists,[sublist/3]).
 
 solve() -> 
