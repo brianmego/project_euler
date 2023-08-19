@@ -6,3 +6,4 @@ rust/target/
 *.beam
 .idea
 .build_*
+target
