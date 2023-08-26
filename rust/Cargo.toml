@@ -5,3 +5,4 @@ authors = ["Brian Mego <brianmego@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+num = "0.4.1"
