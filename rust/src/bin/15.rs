@@ -2,7 +2,7 @@ fn main() {
     let mut triangle = PascalTriangle::default();
     let size_of_square: usize = 20;
     triangle.build(size_of_square * 2 + 1);
-    // triangle.draw();
+    triangle.draw();
     println!("{}", triangle.steps[size_of_square * 2][size_of_square]);
 }
 

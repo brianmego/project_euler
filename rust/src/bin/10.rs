@@ -13,8 +13,8 @@ fn main() {
             }
         }
     }
-    for i in 2..target {
-        if primes[i] {
+    for (i, prime) in primes.iter().enumerate().take(target).skip(2) {
+        if *prime {
             total += i;
         }
     }

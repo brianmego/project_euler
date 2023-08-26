@@ -37,7 +37,7 @@ static GRID_SIZE: usize = ROW_LENGTH * ROW_LENGTH;
 fn main() {
     let grid: Vec<i32> = get_grid();
     let mut max_product = 0;
-    let funcs_to_run: [fn(usize, &Vec<i32>) -> i32; 4] = [get_vertical, get_diagonal_up, get_horizontal, get_diagonal_down];
+    let funcs_to_run: [fn(usize, &[i32]) -> i32; 4] = [get_vertical, get_diagonal_up, get_horizontal, get_diagonal_down];
     for i in 0..GRID_SIZE {
         for f in funcs_to_run.iter() {
             let p = f(i, &grid);
@@ -61,7 +61,7 @@ fn has_room_on_top(i: usize) -> bool {
     i >= (ROW_LENGTH * (WINDOW_SIZE - 1))
 }
 
-fn get_vertical(i: usize, grid: &Vec<i32>) -> i32 {
+fn get_vertical(i: usize, grid: &[i32]) -> i32 {
     let mut p = 1;
     if has_room_on_bottom(i) {
         for j in 0..4 {
@@ -72,7 +72,7 @@ fn get_vertical(i: usize, grid: &Vec<i32>) -> i32 {
     p
 }
 
-fn get_diagonal_up(i: usize, grid: &Vec<i32>) -> i32 {
+fn get_diagonal_up(i: usize, grid: &[i32]) -> i32 {
     let mut p = 1;
     if has_room_on_top(i) && has_room_on_right(i) {
         for j in 0..4 {
@@ -82,7 +82,7 @@ fn get_diagonal_up(i: usize, grid: &Vec<i32>) -> i32 {
     p
 }
 
-fn get_horizontal(i: usize, grid: &Vec<i32>) -> i32 {
+fn get_horizontal(i: usize, grid: &[i32]) -> i32 {
     let mut p = 1;
     if has_room_on_right(i) {
         for j in 0..4 {
@@ -92,7 +92,7 @@ fn get_horizontal(i: usize, grid: &Vec<i32>) -> i32 {
     p
 }
 
-fn get_diagonal_down(i: usize, grid: &Vec<i32>) -> i32 {
+fn get_diagonal_down(i: usize, grid: &[i32]) -> i32 {
     let mut p = 1;
     if has_room_on_bottom(i) && has_room_on_right(i) {
         for j in 0..4 {
