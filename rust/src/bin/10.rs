@@ -5,7 +5,7 @@ fn main() {
 
     let max_target = (target as f64).sqrt();
     for i in 2..(max_target as usize) {
-        if primes[i] == true {
+        if primes[i] {
             let mut j = i*2;
             while j < target {
                 primes[j] = false;
@@ -14,7 +14,7 @@ fn main() {
         }
     }
     for i in 2..target {
-        if primes[i] == true {
+        if primes[i] {
             total += i;
         }
     }

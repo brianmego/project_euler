@@ -3,11 +3,9 @@ fn main() {
     let largest: i32 = interim.pow(2);
     let smallest: i32 = 100;
     for i in (smallest..largest).rev() {
-        if is_palindrome(i) {
-            if has_three_digit_factors(i) {
-                    println!("{}", i);
-                    break;
-            }
+        if is_palindrome(i) && has_three_digit_factors(i) {
+                println!("{}", i);
+                break;
         }
     }
 }
@@ -15,7 +13,7 @@ fn main() {
 fn is_palindrome(i: i32) -> bool {
     let str_i = i.to_string();
     let str_j: String = str_i.chars().rev().collect();
-    return str_i == str_j;
+    str_i == str_j
 }
 
 fn has_three_digit_factors(i: i32) -> bool {
@@ -27,5 +25,5 @@ fn has_three_digit_factors(i: i32) -> bool {
             }
         }
     }
-    return false;
+    false
 }

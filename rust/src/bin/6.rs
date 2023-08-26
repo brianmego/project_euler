@@ -9,7 +9,7 @@ fn square_of_sums(target: i32) -> i32 {
     for i in 1..target+1 {
         sum += i;
     }
-    return sum * sum;
+    sum * sum
 }
 
 fn sum_of_squares(target: i32) -> i32 {
@@ -17,5 +17,5 @@ fn sum_of_squares(target: i32) -> i32 {
     for i in 1..(target + 1) {
         sum += i.pow(2);
     }
-    return sum;
+    sum
 }

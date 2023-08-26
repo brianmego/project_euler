@@ -17,7 +17,7 @@ fn main() {
                 break;
             }
             if cur % 2 == 0 {
-                cur = cur / 2;
+                cur /= 2;
             }
             else {
                 cur = (cur * 3) + 1;

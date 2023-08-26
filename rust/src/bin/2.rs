@@ -5,7 +5,7 @@ fn main() {
 
     while b < 4000000 {
         let c = b;
-        b = a + b;
+        b += a;
         a = c;
         if b % 2 == 0 {
             total += b;

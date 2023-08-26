@@ -27,7 +27,7 @@ fn get_grid() -> Vec<i32> {
     for i in items {
         ints.push(i.parse::<i32>().unwrap());
     }
-    return ints;
+    ints
 }
 
 static ROW_LENGTH: usize = 20;
@@ -66,10 +66,10 @@ fn get_vertical(i: usize, grid: &Vec<i32>) -> i32 {
     if has_room_on_bottom(i) {
         for j in 0..4 {
             let number = grid[i + (ROW_LENGTH * j)];
-            p = p * number;
+            p *= number;
         }
     }
-    return p;
+    p
 }
 
 fn get_diagonal_up(i: usize, grid: &Vec<i32>) -> i32 {
@@ -79,7 +79,7 @@ fn get_diagonal_up(i: usize, grid: &Vec<i32>) -> i32 {
             p *= grid[i - ((ROW_LENGTH - 1) * j)]
         }
     }
-    return p;
+    p
 }
 
 fn get_horizontal(i: usize, grid: &Vec<i32>) -> i32 {
@@ -89,7 +89,7 @@ fn get_horizontal(i: usize, grid: &Vec<i32>) -> i32 {
             p *= grid[i + j]
         }
     }
-    return p
+    p
 }
 
 fn get_diagonal_down(i: usize, grid: &Vec<i32>) -> i32 {
@@ -99,5 +99,5 @@ fn get_diagonal_down(i: usize, grid: &Vec<i32>) -> i32 {
             p *= grid[i + ((ROW_LENGTH + 1) * j)]
         }
     }
-    return p
+    p
 }

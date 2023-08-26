@@ -10,7 +10,7 @@ fn main() {
                 break;
             }
         }
-        if success == true {
+        if success {
             println!("{}", target);
             break;
         }
