@@ -10,18 +10,19 @@
 /// A leap year occurs on any year evenly divisible by 4, but not on a century unless it is divisible by 400.
 /// how many sundays fell on the first of the month during the twentieth century (1 jan 1901 to 31 dec 2000)?
 
-fn main() {
+fn main() -> Result<(), Box<dyn std::error::Error>> {
     let start_date = Date::new(Month::January, 1, 1901, DayOfWeek::Tuesday);
     let end_date = Date::new(Month::December, 31, 2000, DayOfWeek::Sunday);
     let mut date = start_date.clone();
     let mut first_of_the_month_sundays: usize = 0;
     while date != end_date {
-        date = date.next().unwrap();
+        date = date.next().ok_or("I guess tomorrow never came")?;
         if date.day_of_week == DayOfWeek::Sunday && date.day_of_month == 1 {
             first_of_the_month_sundays += 1
         }
     };
     println!("{:?}", first_of_the_month_sundays);
+    Ok(())
 }
 
 #[derive(PartialEq, Debug, Clone)]
