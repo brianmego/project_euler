@@ -26,7 +26,7 @@ where
 {
     n.to_string()
         .chars()
-        .map(|c| c.to_string().parse::<u32>().unwrap())
+        .map(|c| c.to_digit(10).unwrap())
         .sum()
 }
 

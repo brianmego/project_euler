@@ -7,3 +7,4 @@ rust/target/
 .idea
 .build_*
 target
+problems/0022_names.txt
